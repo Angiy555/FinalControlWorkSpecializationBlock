@@ -29,9 +29,16 @@
 ![Task_2_1](./Screenshots/Task_2_1.jpg)
 
 Перемещаем туда файл Human_Friends.txt
-![Task_2_1](./Screenshots/Task_2_2.jpg)
+![Task_2_2](./Screenshots/Task_2_2.jpg)
 
 ### 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого репозитория.
+
+Устанавливаем MySql
+![Task_3_1](./Screenshots/Task_3_1.jpg)
+![Task_3_2](./Screenshots/Task_3_2.jpg)
+![Task_3_3](./Screenshots/Task_3_3.jpg)
+![Task_3_4](./Screenshots/Task_3_4.jpg)
+![Task_3_5](./Screenshots/Task_3_5.jpg)
 
 ### 4. Установить и удалить deb-пакет с помощью dpkg.
 
