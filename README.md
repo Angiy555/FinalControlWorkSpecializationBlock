@@ -53,6 +53,37 @@
 ![Task_4_6](./Screenshots/Task_4_6.jpg)
 
 ### 5. Выложить историю команд в терминале ubuntu.
+Просмотр истории команд
+![Task_5_1](./Screenshots/Task_5_1.jpg)
+~~~
+   1  ls
+   2  cat > Pets.txt
+   3  ls
+   4  cat > Pack_animals.txt
+   5  ls
+   6  cat Pets.txt Pack_animals.txt > United.txt
+   7  ls
+   8  cat United.txt
+   9  mv United.txt Human_Friends.txt
+   10  ls
+   11  mkdir NewDir
+   12  ls
+   13  mv Human_Friends.txt NewDir/
+   14  ls
+   15  cd NewDir
+   16  ls
+   17  wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
+   18  sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb
+   19  sudo apt-get update
+   20  sudo apt-get install mysql-server
+   21  systemctl status mysql
+   22  wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mc/mc_4.8.24-2ubuntu1_amd64.deb
+   23  sudo dpkg -i mc_4.8.24-2ubuntu1_amd64.deb
+   24  sudo apt install -f
+   25  mc
+   26  sudo dpkg -r mc
+
+~~~
 
 ### 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние животные и вьючные животные, в составы которых в случае домашних животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные войдут: Лошади, верблюды и ослы.
 
