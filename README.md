@@ -72,16 +72,17 @@
    14  ls
    15  cd NewDir
    16  ls
-   17  wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
-   18  sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb
-   19  sudo apt-get update
-   20  sudo apt-get install mysql-server
-   21  systemctl status mysql
-   22  wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mc/mc_4.8.24-2ubuntu1_amd64.deb
-   23  sudo dpkg -i mc_4.8.24-2ubuntu1_amd64.deb
-   24  sudo apt install -f
-   25  mc
-   26  sudo dpkg -r mc
+   17  cd ~
+   18  wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
+   19  sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb
+   20  sudo apt-get update
+   21  sudo apt-get install mysql-server
+   22  systemctl status mysql
+   23  wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mc/mc_4.8.24-2ubuntu1_amd64.deb
+   24  sudo dpkg -i mc_4.8.24-2ubuntu1_amd64.deb
+   25  sudo apt install -f
+   26  mc
+   27  sudo dpkg -r mc
 
 ~~~
 
