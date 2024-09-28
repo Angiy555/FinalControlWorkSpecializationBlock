@@ -199,6 +199,38 @@ CREATE TABLE donkey
 
 ### 9. Заполнить низкоуровневые таблицы именами(животных), командами которые они выполняют и датами рождения.
 
+~~~
+INSERT INTO cat (Name, Birthday, Commands, Genus_id)
+VALUES ('My', '2011-01-01', 'to eat', 1),
+('Pushok', '2016-01-01', 'walk', 1),
+('Nusha', '2017-01-01', 'sleep', 1);
+
+INSERT INTO dog (Name, Birthday, Commands, Genus_id)
+VALUES ('Sharik', '2020-01-01', 'for me, to lie, paw, voice', 2),
+('Tuzik', '2021-06-12', 'sit, to lie, paw', 2),
+('Baikal', '2021-05-10', 'sit, to lie, fu, place', 2);
+
+INSERT INTO hamster (Name, Birthday, Commands, Genus_id)
+VALUES ('Pusy', '2020-10-12', NULL, 3),
+('Pestruy', '2021-03-12', NULL, 3),
+('Red', '2022-05-10', NULL, 3);
+
+INSERT INTO horse (Name, Birthday, Commands, Genus_id)
+VALUES ('Lightning', '2020-01-12', 'run, step', 1),
+('Fast', '2017-03-12', 'run, step', 1),
+('Bullet', '2020-11-10', 'run, step', 1);
+
+INSERT INTO camel (Name, Birthday, Commands, Genus_id)
+VALUES ('Black', '2022-04-10', 'run, step', 2),
+('White', '2019-03-12', 'run, step', 2),
+('Camel', '2022-12-10', 'run, step', 2);
+
+INSERT INTO donkey (Name, Birthday, Commands, Genus_id)
+VALUES ('Mull', '2019-04-10', NULL, 3),
+('Gosha', '2020-03-12', NULL, 3),
+('Pasha', '2022-12-10', NULL, 3);
+~~~
+
 ### 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
 
 ### 11. Создать новую таблицу “молодые животные” в которую попадут все животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью до месяца подсчитать возраст животных в новой таблице.
