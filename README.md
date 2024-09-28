@@ -243,6 +243,21 @@ UNION SELECT  Name, Birthday, Commands FROM donkey;
 
 ### 11. Создать новую таблицу “молодые животные” в которую попадут все животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью до месяца подсчитать возраст животных в новой таблице.
 
+~~~
+CREATE TEMPORARY TABLE animal AS
+SELECT *, 'Horse' as genus FROM horse
+UNION SELECT *, 'Donkey' AS genus FROM donkey
+UNION SELECT *, 'Dog' AS genus FROM dog
+UNION SELECT *, 'Cat' AS genus FROM cat
+UNION SELECT *, 'Hamster' AS genus FROM hamster;
+
+CREATE TABLE yang_animal AS
+SELECT Name, Birthday, Commands, genus, TIMESTAMPDIFF(MONTH, Birthday, CURDATE()) AS Age_in_month
+FROM animal WHERE Birthday BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND ADDDATE(CURDATE(), INTERVAL -1 YEAR);
+
+SELECT * FROM yang_animal;
+~~~
+
 ### 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую принадлежность к старым таблицам.
 
 ### 13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
