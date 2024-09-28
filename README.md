@@ -260,6 +260,33 @@ SELECT * FROM yang_animal;
 
 ### 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую принадлежность к старым таблицам.
 
+~~~
+SELECT h.Name, h.Birthday, h.Commands, pa.Pack_animal_name as Genus_name, ya.Age_in_month
+FROM horse h
+LEFT JOIN yang_animal ya ON ya.Name = h.Name
+LEFT JOIN pack_animal pa ON pa.Id = h.Genus_id
+UNION
+SELECT d.Name, d.Birthday, d.Commands, pa.Pack_animal_name, ya.Age_in_month
+FROM donkey d
+LEFT JOIN yang_animal ya ON ya.Name = d.Name
+LEFT JOIN pack_animal pa ON pa.Id = d.Genus_id
+UNION
+SELECT c.Name, c.Birthday, c.Commands, p.Pet_name, ya.Age_in_month
+FROM cat c
+LEFT JOIN yang_animal ya ON ya.Name = c.Name
+LEFT JOIN pet p ON p.Id = c.Genus_id
+UNION
+SELECT d.Name, d.Birthday, d.Commands, p.Pet_name, ya.Age_in_month
+FROM dog d
+LEFT JOIN yang_animal ya ON ya.Name = d.Name
+LEFT JOIN pet p ON p.Id = d.Genus_id
+UNION
+SELECT hm.Name, hm.Birthday, hm.Commands, p.Pet_name, ya.Age_in_month
+FROM hamster hm
+LEFT JOIN yang_animal ya ON ya.Name = hm.Name
+LEFT JOIN pet p ON p.Id = hm.Genus_id;
+~~~
+
 ### 13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
 
 ### 14. Написать программу, имитирующую работу реестра домашних животных.
