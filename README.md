@@ -97,6 +97,106 @@ CREATE DATABASE Human_friends;
 
 ### 8. Создать таблицы с иерархией из диаграммы в БД.
 
+~~~
+USE Human_friends;
+
+CREATE TABLE animal
+(
+   Id INT AUTO_INCREMENT PRIMARY KEY,
+   Name VARCHAR(20)
+);
+
+INSERT INTO animal (Name)
+VALUES ('pet'),
+('pack_animal');
+
+CREATE TABLE pet
+(
+   Id INT AUTO_INCREMENT PRIMARY KEY,
+   Pet_name VARCHAR (20),
+   Class_id INT,
+   FOREIGN KEY (Class_id) REFERENCES animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO pet (Pet_name)
+VALUES ('Cat', 1),
+('Dog', 1),
+('Hamster', 1);
+
+CREATE TABLE pack_animal
+(
+   Id INT AUTO_INCREMENT PRIMARY KEY,
+   Pack_animal_name VARCHAR (20),
+   Class_id INT,
+   FOREIGN KEY (Class_id) REFERENCES animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO pack_animal (Pack_animal_name)
+VALUES ('Horse', 2),
+('Camel', 2),
+('Donkey', 2);
+
+CREATE TABLE cat
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20),
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id INT,
+    FOREIGN KEY (Genus_id) REFERENCES pet (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE dog
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20),
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id INT,
+    FOREIGN KEY (Genus_id) REFERENCES pet (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE hamster
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20),
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id INT,
+    FOREIGN KEY (Genus_id) REFERENCES pet (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE horse
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20),
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id INT,
+    FOREIGN KEY (Genus_id) REFERENCES pack_animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE camel
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20),
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id INT,
+    FOREIGN KEY (Genus_id) REFERENCES pack_animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE donkey
+(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20),
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id INT,
+    FOREIGN KEY (Genus_id) REFERENCES pack_animal (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+~~~
+
 ### 9. Заполнить низкоуровневые таблицы именами(животных), командами которые они выполняют и датами рождения.
 
 ### 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
